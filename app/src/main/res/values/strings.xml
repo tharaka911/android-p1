@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">app1</string>
+    <string name="b1">nawwa1</string>
+    <string name="b2">nawwa2</string>
+    <string name="b3">nawwa3</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+
+    <string name="tv1">Mobile</string>
+    <string name="ptv1">0710507342</string>
+    <string name="tv2">Password</string>
+    <string name="ptv2">abc</string>
+    <string name="sub1">Sign In</string>
+    <string name="home">Home</string>
+
+
+</resources>
