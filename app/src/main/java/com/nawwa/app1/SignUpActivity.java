@@ -1,11 +1,9 @@
 package com.nawwa.app1;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +13,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -63,25 +60,21 @@ public class SignUpActivity extends AppCompatActivity {
 //                    i.setData(uri);
 
                     //making call
-                    Intent i = new Intent(Intent.ACTION_CALL);
-                    Uri uri = Uri.parse("tel:0372230024");
-                    i.setData(uri);
+//                    Intent i = new Intent(Intent.ACTION_CALL);
+//                    Uri uri = Uri.parse("tel:0372230024");
+//                    i.setData(uri);
+
+                    //sending data to other activity
+                    Intent i = new Intent(SignUpActivity.this,HomeActivity.class);
+                    i.putExtra("name","Lakshan");
 
 
 
-                    /* adding validation */
-
-                    if (ActivityCompat.checkSelfPermission(SignUpActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                        // Request permission if not granted
-                        ActivityCompat.requestPermissions(SignUpActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 1);
-                    } else {
-                        // Start activity if permission is already granted
                         if (i.resolveActivity(getPackageManager()) != null) {
                             startActivity(i);
                         } else {
                             Toast.makeText(SignUpActivity.this, "No app found to handle this action", Toast.LENGTH_SHORT).show();
                         }
-                    }
 
                 }else {
                     Log.e("Log1","Error");
@@ -92,5 +85,11 @@ public class SignUpActivity extends AppCompatActivity {
 
             }
         });
+
+        //register receiver to get broadcasting data
+        X x = new X();
+        registerReceiver(x, new IntentFilter("android.intent.action.AIRPLANE_MODE"));
+
+
     }
 }

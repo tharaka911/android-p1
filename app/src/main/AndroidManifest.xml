@@ -5,6 +5,11 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
+
+    <uses-permission
+        android:name="android.permission.CALL_PHONE"
+        tools:ignore="ManifestOrder" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App1">
+        <activity
+            android:name=".BrodcastActivity"
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
@@ -37,9 +45,15 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-    </application>
 
-    <uses-permission android:name="android.permission.CALL_PHONE"
-        tools:ignore="ManifestOrder" />
+<!--        <receiver android:name=".X"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.AIRPLANE_MODE" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+
+
+    </application>
 
 </manifest>

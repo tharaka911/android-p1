@@ -14,6 +14,7 @@
     <string name="ptv2">abc</string>
     <string name="sub1">Sign In</string>
     <string name="home">Home</string>
+    <string name="BroadcastText">Broadcast Received</string>
 
 
 </resources>
